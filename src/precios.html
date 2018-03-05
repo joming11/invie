@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Invie | tus mejores guitarras</title>
+	<link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat" rel="stylesheet">
+	<link rel="stylesheet" href="css/invie.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="precios">
+	<header id="header" class="header background"><!--header-->
+		<div class="contenedor">
+			<figure class="logo"><!--logo-->
+			<img src="img/invie.png" width="186" height="60" alt="logotipo">
+			</figure>
+			<span class="burguer-button icon-menu" id="burguer-button"></span>
+			<nav class="menu" id="menu"><!--menu-->
+				<ul>
+					<li>
+					<a href="index.html">home</a>
+					</li>
+					<li>
+					<a href="index.html#guitarras">guitarras</a>
+					</li>
+					<li>
+					<a href="precios.html">precios</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="tabla">
+		<div class="contenedor">
+			<table>
+				<thead>
+					<tr>
+						<th>modelo</th>
+						<th>precio</th>
+						<th>descripcion</th>
+						<th>modelo</th>
+						<th>precio</th>
+						<th>descripcion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Invie classic</td>
+						<td>$10.000</td>
+						<td>una guitarra para ti</td>
+						<td>Invie classic</td>
+						<td>$10.000</td>
+						<td>una guitarra para ti</td>
+					</tr>
+					<tr>
+						<td>Invie classic</td>
+						<td>$10.000</td>
+						<td>una guitarra para ti</td>
+						<td>Invie classic</td>
+						<td>$10.000</td>
+						<td>una guitarra para ti</td>
+					</tr>
+					<tr>
+						<td>Invie classic</td>
+						<td>$10.000</td>
+						<td>una guitarra para ti</td>
+						<td>Invie classic</td>
+						<td>$10.000</td>
+						<td>una guitarra para ti</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	<footer class="footer">
+	<div class="contenedor">		
+		<div class="contacto">
+			<img src="img/invie-white.png" alt="logo blanco">
+			<a href="tel:+02122808392"><strong>telefono</strong><span>09 00 17288 88</span></a>
+			<a href="mailto:contacto@invie.com"><strong>E-mail</strong><span>Contacto</span></a>
+		</div>
+		<form class="formulario">
+			<div class="col1">
+				<label for="nombre">nombre</label>
+				<input type="text" required id="nombre" name="nombre">
+				<label for="email">E-mail</label>
+				<input type="email" required id="email" name="email">
+				<div class="sexo">
+					<label for="mujer">
+						<input type="radio" checked id="mujer" name="sexo" value="mujer">mujer
+					</label>
+					<label for="hombre">
+						<input type="radio" id="hombre" name="sexo" value="hombre">hombre
+					</label>
+				</div>
+				<div class="intereses">
+					<label for="cotizacion">
+						<input type="checkbox" checked id="cotizacion" name="intereses" value="cotizacion">Cotizacion
+					</label>
+					<label for="reclamos">
+						<input type="checkbox" id="reclamos" name="intereses" value="reclamos">Reclamos
+					</label>
+					<label for="comentarios">
+						<input type="checkbox" id="comentarios" name="intereses" value="comentarios">Comentarios
+					</label>
+					<label for="otros">
+						<input type="checkbox" id="otros" name="intereses" value="otros">Otros
+					</label>
+				</div>
+			</div>
+			<div class="col2">
+				<label for="comentarios">Comentarios</label>
+				<textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
+				<input type="submit" class="button" value="Enviar">
+			</div>
+		</form>
+	</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+	<script>
+	//con window.matchMedia('(max-width:800px)') hacemos un mediaquierie en js
+		var consulta = window.matchMedia('(max-width: 500px)');
+		consulta.addListener(mediaQuery);
+
+		function mediaQuery(){
+
+			if (consulta.matches){
+
+				burguerButton.addEventListener('touchstart',toggleMenu);
+				
+		}else{
+
+			burguerButton.removeEventListener('touchstart',toggleMenu);
+		}
+	}
+	
+
+			var burguerButton = document.getElementById('burguer-button');
+			var menu = document.getElementById('menu');
+			function toggleMenu(){
+
+				menu.classList.toggle('show')
+
+				burguerButton.classList.toggle('icon-close')
+			};
+
+	mediaQuery();
+
+	var blazy = new Blazy({
+		selector: 'img'
+	});
+	</script>
+</body>
+</html>
